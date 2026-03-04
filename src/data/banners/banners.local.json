@@ -1,0 +1,17 @@
+[
+  {
+    "id": "BANNER-0001",
+    "texto": "some text for this astro banner",
+    "imagen": "/media/banners/BANNER-0001/image.jpeg"
+  },
+  {
+    "id": "BANNER-0002",
+    "texto": "some text for this svelte banner",
+    "imagen": "/media/banners/BANNER-0002/image.jpg"
+  },
+  {
+    "id": "BANNER-0003",
+    "texto": "some text for this tailwind banner",
+    "imagen": "/media/banners/BANNER-0003/image.jpg"
+  }
+]

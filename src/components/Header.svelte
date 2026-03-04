@@ -1,8 +1,12 @@
-<script>
+<script lang="ts">
   import { fly } from "svelte/transition";
   import { getTheme, toggleTheme } from "@lib/state/themeState.svelte";
 
-  let { title } = $props();
+  interface Props {
+    title: string;
+  }
+
+  let { title }: Props = $props();
 </script>
 
 <header

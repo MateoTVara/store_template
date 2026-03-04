@@ -1,7 +1,8 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
+import BannersCarousel from "@components/BannersCarousel.svelte"
 ---
 
 <BaseLayout>
-	<h1 class="text-center mt-4">Welcome to Fake Store :3</h1>
+	<BannersCarousel client:load/>
 </BaseLayout>

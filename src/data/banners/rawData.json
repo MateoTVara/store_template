@@ -1,0 +1,17 @@
+[
+  {
+    "id": "BANNER-0001",
+    "texto": "some text for this astro banner",
+    "imagen": "https://www.datocms-assets.com/48401/1638296498-astro-banner.jpeg"
+  },
+  {
+    "id": "BANNER-0002",
+    "texto": "some text for this svelte banner",
+    "imagen": "https://devonblog.com/wp-content/uploads/2021/05/Svelte-banner.jpg"
+  },
+  {
+    "id": "BANNER-0003",
+    "texto": "some text for this tailwind banner",
+    "imagen": "https://miro.medium.com/v2/resize:fit:1400/format:webp/0*vrbWwf92KcgylQsf.jpg"
+  }
+]

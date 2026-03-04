@@ -1,5 +1,5 @@
 {
-  "name": "fake_store",
+  "name": "store_template",
   "type": "module",
   "version": "0.0.1",
   "scripts": {

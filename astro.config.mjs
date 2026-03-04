@@ -7,6 +7,7 @@ import svelte from '@astrojs/svelte';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://store-template-three.vercel.app',
   vite: {
     plugins: [tailwindcss()]
   },

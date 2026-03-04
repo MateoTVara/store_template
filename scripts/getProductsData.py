@@ -18,6 +18,7 @@ class Product(TypedDict): # Extend this with more fields as needed, but 'id' is 
     precio: float
     descripcion: str
     img1: str
+    img2: str
 
 # ---------------------------------------------------------------------------
 # Paths & environment
@@ -45,7 +46,7 @@ HTTP_HEADERS: dict[str, str] = {
     "Referer": "https://www.yanbal.com/",
 }
 
-MEDIA_FIELDS: set[str] = {"img1"}
+MEDIA_FIELDS: set[str] = {"img1", "img2"}
 
 # ---------------------------------------------------------------------------
 # Environment helpers
@@ -162,6 +163,7 @@ def downloadImagesForProduct(item: Product, dest_dir: Path) -> None:
     image_url_list = [
         url for url in [
             item.get("img1"),
+            item.get("img2"),
         ] if url
     ]
 
@@ -239,7 +241,7 @@ def localize_image_fields(product: Product) -> None:
     Falls back to the original URL if the file is not found locally.
     """
     img_dir: Path = PUBLIC_MEDIA_DIR / product["id"] / "images"
-    image_fields: list[str] = ["img1"]  # extend here if more image fields are added
+    image_fields: list[str] = ["img1", "img2"]  # extend here if more image fields are added
     for i, field in enumerate(image_fields, start=1):
         if not product.get(field):  # type: ignore[arg-type]
             continue

@@ -51,7 +51,7 @@
         in:softFade={{ duration: 500 }}
         style="background-image: url({currentBanner.image})"
       >
-        <div class="w-full h-full flex items-start justify-center pt-5 bg-black/30 rounded-lg">
+        <div class="w-full h-full flex items-start justify-center pt-5 bg-black/40">
           <h2 class="text-white text-xl font-bold drop-shadow">{currentBanner.text}</h2>
         </div>
       </div>

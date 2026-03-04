@@ -5,6 +5,7 @@ export interface ProductRaw {
   precio: number
   descripcion: string
   img1: string
+  img2: string
 }
 
 export interface ProductDTO {

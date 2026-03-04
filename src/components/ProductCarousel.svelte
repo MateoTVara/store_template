@@ -1,7 +1,7 @@
 <script lang="ts">
   import type { ProductDTO } from "@customtypes/Product";
   import softFade from "@styles/transitions/softFade";
-    import { onDestroy, onMount } from "svelte";
+  import { onDestroy, onMount } from "svelte";
 
   interface Props { product: ProductDTO }
 
@@ -45,7 +45,7 @@
 
 <div class="flex flex-col-reverse lg:flex-row flex-1 gap-4">
   <!-- Thumbnail Navigation -->
-  <div class="flex flex-row shrink-0 justify-center gap-2 mt-4 lg:mt-0">
+  <div class="flex flex-row shrink-0 justify-center gap-2 mt-4 lg:mt-0 lg:flex-col">
     {#each product.imgs as img, index}
       <button
         type="button"

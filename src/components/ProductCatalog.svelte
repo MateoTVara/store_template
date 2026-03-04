@@ -1,8 +1,7 @@
 <script lang="ts">
-  import { getProducts, getAllCategories, getProductsByCategory } from "@data/products/productsRepository";
+  import { getAllCategories, getProductsByCategory } from "@data/products/productsRepository";
   import ProductCard from "./ProductCard.svelte";
 
-  const products = getProducts();
   const categories = getAllCategories();
 </script>
 

@@ -7,7 +7,7 @@ const mapProduct = (product: ProductRaw): ProductDTO => ({
   category: product.categoria,
   price: product.precio,
   description: product.descripcion,
-  imgs: [product.img1],
+  imgs: [product.img1, product.img2],
 });
 
 export const getProducts = () => productsLocalJson.map(mapProduct)
@@ -25,6 +25,17 @@ export const getProductsByCategory = (category: string) => {
   if (products.length === 0) {
     throw new Error(`No products found for category ${category}`)
   }
+  return products
+}
+
+export const getProductsLike = (query: string) => {
+  const lowerQuery = query.toLowerCase()
+  const products = getProducts().filter(product =>
+    product.name.toLowerCase().includes(lowerQuery) ||
+    product.description.toLowerCase().includes(lowerQuery) ||
+    product.category.toLowerCase().includes(lowerQuery)
+  )
+  
   return products
 }
 

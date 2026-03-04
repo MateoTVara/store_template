@@ -52,7 +52,7 @@ const absoluteImage = new URL(image, Astro.site ?? Astro.url.origin).href;
 		<meta name="twitter:image" content={absoluteImage} />
 	</head>
 	<body>
-		<Header title={title} client:load/>
+		<Header client:load/>
 		<main>
 			<slot />
 		</main>

@@ -246,7 +246,7 @@ def localize_image_fields(product: Product) -> None:
         for ext in VALID_IMAGE_EXTS:
             local_file = img_dir / f"{i}{ext}"
             if local_file.exists():
-                product[field] = f"/media/{product['id']}/images/{i}{ext}"  # type: ignore[literal-required]
+                product[field] = f"/media/products/{product['id']}/images/{i}{ext}"  # type: ignore[literal-required]
                 break
 
 # ---------------------------------------------------------------------------

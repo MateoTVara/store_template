@@ -1,0 +1,29 @@
+---
+import type { ProductDTO } from "@customtypes/Product";
+import BaseLayout from "@layouts/BaseLayout.astro"
+import ProductCarousel from "@components/ProductCarousel.svelte";
+import ProductSummary from "@components/ProductSummary.svelte";
+import { getProducts } from "@data/products/productsRepository";
+
+export const getStaticPaths = (() => 
+  getProducts().map((product) => ({
+    params: { id: product.id },
+    props: { product },
+  }))
+);
+
+interface Props { product: ProductDTO }
+const { product } = Astro.props;
+---
+<BaseLayout
+  title={product.name}
+  description={product.description}
+  image={product.imgs[0]}
+>
+  <div
+    class="flex flex-col md:flex-row p-4 md:p-6 lg:p-8 gap-4"
+  >
+    <ProductCarousel {product} />
+    <ProductSummary {product} />
+  </div>
+</BaseLayout>

@@ -1,8 +1,10 @@
 ---
 import BaseLayout from "@layouts/BaseLayout.astro"
 import BannersCarousel from "@components/BannersCarousel.svelte"
+import ProductCatalog from "@components/ProductCatalog.svelte"
 ---
 
 <BaseLayout>
 	<BannersCarousel client:load/>
+	<ProductCatalog client:load/>
 </BaseLayout>

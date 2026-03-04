@@ -2,11 +2,7 @@
   import { fly } from "svelte/transition";
   import { getTheme, toggleTheme } from "@lib/state/themeState.svelte";
 
-  interface Props {
-    title: string;
-  }
-
-  let { title }: Props = $props();
+  const title = "Fake Store";
 </script>
 
 <header
@@ -14,7 +10,11 @@
   bg-gray-100 dark:bg-gray-800
   "
   >
-  <h1 class="text-2xl font-bold dark:text-white">{title}</h1>
+  <h1 class="text-md lg:text-2xl font-bold dark:text-white">
+    <a href="/">
+      {title}
+    </a>
+  </h1>
   <button
     class="
     relative w-16 h-9 rounded-full 
@@ -26,8 +26,8 @@
     {#if getTheme() === "light"}
       <span
         in:fly={{ x: 10, duration: 300 }}
-        class="
-        absolute left-2 text-sm rounded-full p-1 transition-opacity duration-300 z-20
+        class="flex items-center justify-center w-7 h-7
+        absolute left-2 text-sm text-center rounded-full transition-opacity duration-300 z-20
         bg-gray-200"
       >
         ☀️
@@ -35,8 +35,8 @@
     {:else}
       <span
         in:fly={{ x: -10, duration: 300 }}
-        class="
-        absolute right-2 text-sm rounded-full p-1 transition-opacity duration-300 z-20
+        class="flex items-center justify-center w-7 h-7
+        absolute right-2 text-sm text-center rounded-full transition-opacity duration-300 z-20
         bg-blue-950"
       >
         🌙

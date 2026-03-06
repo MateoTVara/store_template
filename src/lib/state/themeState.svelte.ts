@@ -16,12 +16,14 @@ const applyTheme = (mode: ThemeMode) => {
   document.documentElement.classList.toggle('dark', mode === 'dark');
 }
 
-$effect.root(() => applyTheme(theme.mode) )
+$effect.root(() => {
+  $effect(() => { applyTheme(theme.mode) });
+  return () => {/* Cleanup if necessary */};
+});
 
 export const getTheme = () => theme.mode;
 
 export const toggleTheme = () => {
   theme.mode = theme.mode === 'light' ? 'dark' : 'light';
   localStorage.setItem(LOCAL_STORAGE_KEYS.THEME, theme.mode);
-  applyTheme(theme.mode);
 }

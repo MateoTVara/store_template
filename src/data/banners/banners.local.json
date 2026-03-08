@@ -7,7 +7,7 @@
   {
     "id": "BANNER-0002",
     "texto": "some text for this svelte banner",
-    "imagen": "/media/banners/BANNER-0002/image.jpg"
+    "imagen": "https://devonblog.com/wp-content/uploads/2021/05/Svelte-banner.jpg"
   },
   {
     "id": "BANNER-0003",

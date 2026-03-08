@@ -198,7 +198,8 @@ def localize_images(banner: Banner):
 def build_banners():
 
     spreadsheet_id = get_required_env("SPREADSHEET_ID")
-    sheet_id = "565783107"
+    sheet_id = "565783107" # full image
+    # sheet_id = "55303911" # icon like image
 
     new_data = fetch_sheet_data(spreadsheet_id, sheet_id)
     old_data = load_json(RAW_OUTPUT)

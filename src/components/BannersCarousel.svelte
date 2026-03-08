@@ -17,16 +17,30 @@
 <div class="relative w-full overflow-hidden select-none">
   <!-- Slides -->
   {#key carousel.current}
-    <div class="relative h-56 md:h-72 lg:h-96">
+    <div
+      class="relative h-56 md:h-72 lg:h-96"
+      class:bg-amber-800={currentBanner.id === "BANNER-0001"}
+      class:bg-white={currentBanner.id === "BANNER-0002"}
+      class:bg-blue-300={currentBanner.id === "BANNER-0003"}
+      in:softFade={{ duration: 500 }}
+    >
+      <!-- cover version for full images -->
       <div
         class="absolute inset-0 bg-cover bg-center"
-        in:softFade={{ duration: 500 }}
         style="background-image: url({currentBanner.image})"
       >
         <div class="w-full h-full flex items-start justify-center pt-5 bg-black/40">
           <h2 class="text-white text-xl font-bold drop-shadow">{currentBanner.text}</h2>
         </div>
       </div>
+
+      <!-- positioned version for icon like images -->
+      <!-- <div class="w-full h-full flex items-center justify-start pl-15 bg-black/40">
+        <h2 class="text-white text-sm lg:text-xl font-bold drop-shadow">{currentBanner.text}</h2>
+      </div>
+      <img src={currentBanner.image} alt={currentBanner.text}
+        class="absolute bottom-5 right-5 w-16 h-16 lg:w-40 lg:h-40 object-cover"
+      > -->
     </div>
   {/key}
 
